@@ -1,24 +1,45 @@
-import {defineConfig} from 'vitepress'   // подключаем хелпер для конфига
+import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-    lang: 'ru-RU',                         // атрибут <html lang="...">
-    title: 'PF-FORUM Docs',                 // глобальный заголовок сайта
-    description: 'Документация',            // <meta name="description">
-    cleanUrls: true,                        // убирает .html в ссылках
+    lang: 'ru-RU',
+    title: 'PF-FORUM Docs',
+    description: 'Документация',
+    cleanUrls: true,
 
-    themeConfig: {                          // настройки темы
-        siteTitle: 'PF-FORUM Docs',         // текст слева в шапке
-        nav: [                              // верхнее меню
-            {text: 'Главная', link: '/'},
-            {text: 'Гайд', link: '/guide/'},
-            {text: 'Контакты', link: '/contact'}
+    themeConfig: {
+        siteTitle: 'PF-FORUM Docs',
+        nav: [
+            { text: 'Главная', link: '/' },
+            { text: 'Подготовка', link: '/docs' },
+            { text: 'Контакты', link: '/contact' }
         ],
-        sidebar: [                          // меню слева (боковое)
-            {text: 'Наша история', link: '/about/our-story'}
+        sidebar: [
+            {
+                text: 'Документация проекта',
+                items: [
+                    { text: 'Быстрый старт', link: '/getting-started' },
+                    { text: 'Архитектура', link: '/architecture' },
+                    { text: 'Стек 2025', link: '/stack-2025' },
+                    { text: 'Чистый код', link: '/clean-code' },
+                    { text: 'Сборка', link: '/build' },
+                    { text: 'Тестирование', link: '/testing' },
+                    { text: 'Безопасность', link: '/security' },
+                    { text: 'Доставка', link: '/delivery' }
+                ]
+            },
+            {
+                text: 'Подготовка',
+                items: [
+                    { text: 'JavaScript', link: '/javascript/index' },
+                    { text: 'TypeScript', link: '/typescript/index' },
+                    { text: 'Vue 3', link: '/vue/index' },
+                    { text: 'Практика (все темы)', link: '/practice/index' }
+                ]
+            }
         ],
-        outline: {                          // блок "On this page"
-            level: [2, 3],                  // показывать H2 и H3
-            label: 'Содержание'             // заголовок блока
+        outline: {
+            level: [2, 3],
+            label: 'Содержание'
         }
     }
 })
